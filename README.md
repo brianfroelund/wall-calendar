@@ -1,14 +1,31 @@
-Remove Curser
+## Wall calendar software setup
+
+#### Remove Curser
 sudo apt-get install unclutter
 
-Prevent sleep
-sudo nano /etc/lightdm/lightdm.conf
-xserver-command=X -s 0 –dpms
+#### Prevent sleep
 
-Chromium setup
-sudo apt-get install chromium 
-~/.config/chromium/Default/User StyleSheets/Custom.css
+> sudo nano /etc/lightdm/lightdm.conf
 
-sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
-@chromium --noerrdialogs --kiosk --homepage 'https://www.google.com/calendar/render#h%7Cmonth'
-@sed -i 's/"exited_cleanly": false/"exited_cleanly": true/' ~/.config/chromium/Default/Preferences
+find the following line:
+
+> \#xserver-command=X
+
+and change it into:
+
+> xserver-command=X -s 0 –dpms
+
+#### Iceweasel setup
+> ~/.config/chromium/Default/User StyleSheets/Custom.css
+
+> sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+> @iceweasel
+
+
+
+#### Launch monitor controller at startup
+> sudo crontab -e -u root
+
+Insert 
+
+> @reboot sh /home/pi/launcher.sh >/dev/null 2>&1 &
