@@ -9,7 +9,7 @@ sudo apt-get install unclutter
 
 find the following line:
 
-> #xserver-command=X
+> \#xserver-command=X
 
 and change it into:
 
