@@ -6,9 +6,13 @@ sudo apt-get install unclutter
 #### Prevent sleep
 
 > sudo nano /etc/lightdm/lightdm.conf
+
 find the following line:
+
 > #xserver-command=X
+
 and change it into:
+
 > xserver-command=X -s 0 –dpms
 
 #### Iceweasel setup
@@ -21,5 +25,7 @@ and change it into:
 
 #### Launch monitor controller at startup
 > sudo crontab -e -u root
+
 Insert 
+
 > @reboot sh /home/pi/launcher.sh >/dev/null 2>&1 &
