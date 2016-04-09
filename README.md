@@ -10,5 +10,14 @@ sudo apt-get install chromium
 ~/.config/chromium/Default/User StyleSheets/Custom.css
 
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
-@chromium --noerrdialogs --kiosk --homepage 'https://www.google.com/calendar/render#h%7Cmonth'
-@sed -i 's/"exited_cleanly": false/"exited_cleanly": true/' ~/.config/chromium/Default/Preferences
+@iceweasel
+
+
+
+### Launch monitor controller at startup
+
+> sudo crontab -e -u root
+
+Insert 
+
+> @reboot sh /home/pi/launcher.sh >/dev/null 2>&1 &
