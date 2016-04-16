@@ -21,11 +21,9 @@ and change it into:
 > sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 > @iceweasel
 
-
-
 #### Launch monitor controller at startup
-> sudo crontab -e -u root
+> crontab -e
 
 Insert 
 
-> @reboot sh /home/pi/launcher.sh >/dev/null 2>&1 &
+> @reboot sh /home/pi/launcher.sh >/dev/null 2>&1
