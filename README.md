@@ -15,11 +15,11 @@ and change it into:
 
 > xserver-command=X -s 0 –dpms
 
-#### Iceweasel setup
+#### Chromium setup
 > ~/.config/chromium/Default/User StyleSheets/Custom.css
 
-> sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
-> @iceweasel
+> sudo nano ~/.config/lxsession/LXDE-pi/autostart 
+> @chromium-browser --kiosk  calendar.google.com/calendar/render#main_7|custom,28
 
 #### Launch monitor controller at startup
 > crontab -e
